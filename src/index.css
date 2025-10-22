@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: linear-gradient(135deg,
+      #ff6b6b 0%,
+      #ee5a6f 12%,
+      #c44569 25%,
+      #4834d4 37%,
+      #686de0 50%,
+      #30336b 62%,
+      #22a6b3 75%,
+      #6ab04c 87%,
+      #f9ca24 100%
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 25s ease infinite;
+  }
+
+  .gradient-bg-fast {
+    background: linear-gradient(135deg,
+      #ff6b6b 0%,
+      #c44569 20%,
+      #4834d4 40%,
+      #22a6b3 60%,
+      #6ab04c 80%,
+      #f9ca24 100%
+    );
+    background-size: 300% 300%;
+    animation: gradientFlow 15s ease infinite;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.3s ease-out forwards;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+
+  .luxury-shadow {
+    box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.1),
+                0 10px 20px -10px rgba(0, 0, 0, 0.04);
+  }
+
+  .luxury-shadow-lg {
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.15),
+                0 15px 30px -15px rgba(0, 0, 0, 0.08);
+  }
+
+  .glow-button {
+    @apply relative overflow-hidden;
+    transition: all 0.3s ease;
+  }
+
+  .glow-button::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+  }
+
+  .glow-button:hover::before {
+    transform: translateX(100%);
+  }
+
+  .glow-button:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+                0 0 40px rgba(59, 130, 246, 0.3),
+                0 0 60px rgba(59, 130, 246, 0.2);
+  }
+
+  .interactive-card {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .interactive-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 60px -10px rgba(59, 130, 246, 0.3),
+                0 10px 30px -10px rgba(59, 130, 246, 0.2);
+  }
+}
