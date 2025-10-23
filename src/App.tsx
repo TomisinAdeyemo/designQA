@@ -40,9 +40,9 @@ function AppContent() {
   }
 
   if (!user) {
-    if (currentPath === '/signup') {
-      return <SignUp />;
-    }
+   if (currentPath === '/signup' || currentPath === '/designQA/signup') {
+  return <SignUp />;
+}
     return <SignIn />;
   }
 
