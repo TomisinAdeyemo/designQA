@@ -9,3 +9,11 @@ export default defineConfig({
   },
   base: '/vite-react-typescript-starter/',
 });
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/designQA/', 
+  optimizeDeps: {
+    exclude: ['lucide-react'],
+  },
+})
