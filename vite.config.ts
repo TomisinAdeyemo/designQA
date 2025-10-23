@@ -7,13 +7,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  base: '/vite-react-typescript-starter/',
+  base: '/designQA/',
 });
-
-export default defineConfig({
-  plugins: [react()],
-  base: '/designQA/', 
-  optimizeDeps: {
-    exclude: ['lucide-react'],
-  },
 })
